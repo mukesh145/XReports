@@ -4,10 +4,6 @@ import styles from "./Main.module.css";
 const Main = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -20,19 +16,27 @@ const Main = () => {
     formData.append("file", selectedFile);
 
     try {
-      const response = await fetch("https://example.com/upload", {
+      console.log("heloo1");
+
+      const response = await fetch("http://127.0.0.1:8080/upload", {
         method: "POST",
         body: formData,
       });
-
+      console.log(response);
       if (response.ok) {
+        // console.log(response.message);
         console.log("File uploaded successfully.");
       } else {
         console.error("Failed to upload file.");
       }
     } catch (error) {
+      console.log("heloooo2");
       console.error("Error uploading file:", error);
     }
+  };
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
   };
 
   return (
