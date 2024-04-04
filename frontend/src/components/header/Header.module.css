@@ -1,0 +1,12 @@
+.header {
+  background-color: #363637; /* Example background color */
+  color: #fff; /* Example text color */
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 32px; /* Larger font size for title */
+  font-weight: bold; /* Bold font weight */
+  letter-spacing: 2px; /* Increased letter spacing */
+  margin: 0; /* Remove margin to avoid extra space */
+}
